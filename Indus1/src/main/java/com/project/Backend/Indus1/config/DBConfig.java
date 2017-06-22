@@ -22,7 +22,7 @@ import com.project.Backend.Indus1.model.User;
 
 
 @Configuration
-@ComponentScan("com.mobitel.MobitelBackend")
+@ComponentScan("com.project.Backend.Indus1")
 @EnableTransactionManagement
 public class DBConfig 
 {
