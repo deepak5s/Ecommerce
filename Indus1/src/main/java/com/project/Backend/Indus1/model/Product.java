@@ -1,18 +1,33 @@
 package com.project.Backend.Indus1.model;
 
+
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
 
 @Entity
 @Table
-public class Product {
+public class Product<MultipartFile> {
 	@Id
 	@GeneratedValue
 	int prodid;
 int catid,suppid,quantity,price;
-String prodname,proddesc;
+String prodname;
+String proddesc;
+@Transient
+MultipartFile pimage;
+
+
+public MultipartFile getPimage() {
+	return pimage;
+}
+public void setPimage(MultipartFile pimage) {
+	this.pimage = pimage;
+}
 public int getProdid() {
 	return prodid;
 }

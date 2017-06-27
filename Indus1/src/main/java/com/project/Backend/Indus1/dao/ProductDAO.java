@@ -30,24 +30,25 @@ public class ProductDAO
 		session.saveOrUpdate(product);
 	}
 	
-	public Category getCategory(int catid)
+	public Product getCategory(int prodid)
 	{
 		Session session=sessionFactory.openSession();
-		Category product=(Category)session.get(Product.class,catid);
+		Product product=(Product)session.get(Product.class,prodid);
 		session.close();
 		return product;
 	}
 	
 	@Transactional
-	public void deleteCategory(Category category)
+	public void deleteCategory(Product product)
 	{
-		sessionFactory.getCurrentSession().delete(category);
+		sessionFactory.getCurrentSession().delete(product);
 	}
 	
 	public List<Product> getCategoryDetails()
 	{
 		Session session=sessionFactory.openSession();
-		Query query=session.createQuery("from product");
+		Query query=session.createQuery("from Product");
+		@SuppressWarnings("unchecked")
 		List<Product> list=query.list();
 		session.close();
 		return list;
