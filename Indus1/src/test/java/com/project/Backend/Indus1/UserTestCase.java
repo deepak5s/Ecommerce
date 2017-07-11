@@ -23,9 +23,13 @@ public class UserTestCase
 		//Insertion TestCase
 		
 		User user=new User();
-		user.setUsername("x1");
-		user.setCustFirstName("abc");
-		user.setAddress("abcde");
+		user.setUsername("tyagi123");
+		user.setCustFirstName("Aaakash");
+		user.setCustLastName("tyagi");
+		user.setAddress("Hapur");
+		user.setEnabled(true);
+		user.setRole("USER_ROLE");
+		user.setPassword("1234");
 		
 
 		userDAO.insertUpdateUser(user);		
