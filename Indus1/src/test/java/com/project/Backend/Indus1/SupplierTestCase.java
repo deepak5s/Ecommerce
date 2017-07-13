@@ -2,61 +2,65 @@ package com.project.Backend.Indus1;
 
 import java.util.List;
 
+
+import javax.naming.Context;
+
+
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.project.Backend.Indus1.dao.SupplierDAO;
-import com.project.Backend.Indus1.model.Supplier;
 
+import com.project.Backend.Indus1.model.Supplier;
 
 public class SupplierTestCase 
 {
-	public static void main(String arg[])
-	{
-		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
-		
-		context.scan("com.project.Backend.Indus1");
-		
-		context.refresh();
-		
-		// Inserting a Category Object.
-		SupplierDAO supplierDAO=(SupplierDAO)context.getBean("supplierDAO");
-		//Insertion TestCase
-		
-		Supplier supplier=new Supplier();
-		supplier.setAddress("BajrangNagar");
-		supplier.setSuppid(108);
-		supplier.setSuppname("Neeraj");
-		
+public static void main(String[] args) {
+	AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
+	context.scan("com.project.Backend.Indus1");
+	context.refresh();
 
-		supplierDAO.insertUpdateSupplier(supplier);		
-		System.out.println("Supplier ceeated");
-		
-		//Retrieval TestCase
-		
-		/*Category category=categoryDAO.getCategory(2);
-		System.out.println("Category Name:"+category.getCatname());
-		System.out.println("Category Description:"+category.getCatdesc());*/
+SupplierDAO supplierDAO=(SupplierDAO)context.getBean("supplierDAO");
+
+	
+Supplier supplier=new Supplier();
+
+supplier.setSuppname("Amit");
+supplier.setSuppaddress("Noida");
+
+supplierDAO.insertUpdateSupplier(supplier);		
+System.out.println("Supplier Inserted");
+
+
+//Retrieval TestCase
+
+		/*Supplier supplier=supplierDAO.getSupplier(2);
+		System.out.println("Supplier Name:"+supplier.getSuppname());
+		System.out.println("Supplier Description:"+supplier.getSuppaddress());
 		
 		//Deletion TestCase
-		/*Category category=categoryDAO.getCategory(2);
-		categoryDAO.deleteCategory(category);
-		System.out.println("The Category Deleted");*/
+		Supplier supplier=supplierDAO.getSupplier(2);
+		supplierDAO.deleteSupplier(supplier);
+		System.out.println("The Supplier Deleted");
 		
 		//Retrieving the Data
 		
-		/*List<Category> list=categoryDAO.getCategoryDetails();
+		List<Supplier> list=supplierDAO.getSupplierDetails();
 		
-		for(Category category:list)
+		for(Supplier supplier1:list)
 		{
-			System.out.println(category.getCatid()+":"+category.getCatname()+":"+category.getCatdesc());
-		}*/
+			System.out.println(supplier1.getSuppid()+":"+supplier1.getSuppname()+":"+supplier1.getSuppaddress());
+		}
 		
-		//Update the Category
-	/*	Category category=categoryDAO.getCategory(3);
-		category.setCatname("WifiEnMobile");
-		categoryDAO.insertUpdateCategory(category);
-		System.out.println("The Category Updated");*/
+		Update the Supplier
+		Supplier supplier=supplierDAO.getSupplier(1);
+		supplier.setSuppname("X");
+		supplierDAO.insertUpdateSupplier(supplier);
+		System.out.println("The Supplier Updated");
 		
-	}
+	
 }
 
+*/
+}
+}

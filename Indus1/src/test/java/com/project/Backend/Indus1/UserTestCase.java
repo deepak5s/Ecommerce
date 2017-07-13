@@ -2,78 +2,56 @@ package com.project.Backend.Indus1;
 
 import java.util.List;
 
+import javax.naming.Context;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.project.Backend.Indus1.dao.UserDAO;
-import com.project.Backend.Indus1.model.User;
+import com.project.Backend.Indus1.model.UserRegister;
 
-
-public class UserTestCase 
-{
-	public static void main(String arg[])
-	{
-		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
-		
+public class UserTestCase {
+	public static void main(String[] args) {
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 		context.scan("com.project.Backend.Indus1");
-		
 		context.refresh();
-		
-		// Inserting a Category Object.
-		UserDAO userDAO=(UserDAO)context.getBean("userDAO");
-		//Insertion TestCase
-		
-		User user=new User();
-		user.setUsername("tyagi123");
-		user.setCustFirstName("Aaakash");
-		user.setCustLastName("tyagi");
-		user.setAddress("Hapur");
-		user.setEnabled(true);
-		user.setRole("USER_ROLE");
-		user.setPassword("1234");
-		
 
-		userDAO.insertUpdateUser(user);		
-		System.out.println("User ceeated");
-		
-		//Retrieval TestCase
-		
-		/*Category category=categoryDAO.getCategory(2);
-		System.out.println("Category Name:"+category.getCatname());
-		System.out.println("Category Description:"+category.getCatdesc());*/
-		
-		//Deletion TestCase
-		/*Category category=categoryDAO.getCategory(2);
-		categoryDAO.deleteCategory(category);
-		System.out.println("The Category Deleted");*/
-		
-		//Retrieving the Data
-		
-		/*List<Category> list=categoryDAO.getCategoryDetails();
-		
-		for(Category category:list)
-		{
-			System.out.println(category.getCatid()+":"+category.getCatname()+":"+category.getCatdesc());
-		}*/
-		
-		//Update the Category
-	/*	Category category=categoryDAO.getCategory(3);
-		category.setCatname("WifiEnMobile");
-		categoryDAO.insertUpdateCategory(category);
-		System.out.println("The Category Updated");*/
-		
+		UserDAO userDAO = (UserDAO) context.getBean("UserDAO");
+
+		UserRegister user = new UserRegister();
+
+		user.setAddress("Faridabad");
+		user.setPassword("123");
+		user.setCustomername("Aakash");
+
+		user.setEmail("a22@gmail.com");
+		user.setRole("ROLE_USER");
+		user.setMobile(123456);
+        user.setUsername("tyagi123"); 
+		userDAO.insertUpdateUser(user);
+		System.out.println("User Inserted");
+
+		// Retrieval TestCase
+
+		/*
+		 * UserRegister user1=userDAO.getUser("");
+		 * System.out.println("User Name:"+user1.getUsername());
+		 * System.out.println("User Description:"+user1.getRole());
+		 * 
+		 * //Deletion TestCase /*UserRegister user2=userDAO.getUser("");
+		 * userDAO.deleteUser(user2); System.out.println("The User Deleted");
+		 * 
+		 * //Retrieving the Data
+		 * 
+		 * List<UserRegister> list=userDAO.getUserDetails();
+		 * 
+		 * for(UserRegister user3:list) {
+		 * System.out.println(user3.getUsername()+":"+user3.getPassword()+":"+
+		 * user3.getRole()); }
+		 * 
+		 * //Update the User UserRegister user4=userDAO.getUser("");
+		 * user4.setRole(""); userDAO.insertUpdateUser(user4);
+		 * System.out.println("The User Updated");
+		 */
+
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

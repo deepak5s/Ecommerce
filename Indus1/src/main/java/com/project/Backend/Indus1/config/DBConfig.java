@@ -13,12 +13,14 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.project.Backend.Indus1.model.Cart;
+import com.project.Backend.Indus1.dao.CartDAO;
 import com.project.Backend.Indus1.dao.SupplierDAO;
 import com.project.Backend.Indus1.dao.UserDAO;
 import com.project.Backend.Indus1.model.Category;
 import com.project.Backend.Indus1.model.Product;
 import com.project.Backend.Indus1.model.Supplier;
-import com.project.Backend.Indus1.model.User;
+import com.project.Backend.Indus1.model.UserRegister;
 
 
 @Configuration
@@ -58,8 +60,9 @@ public class DBConfig
 		System.out.println("---Factory Builder Object Created---");
 		sessionBuilder.addAnnotatedClass(Product.class);
 		sessionBuilder.addAnnotatedClass(Category.class);
-		sessionBuilder.addAnnotatedClass(User.class);
+		sessionBuilder.addAnnotatedClass(UserRegister.class);
 		sessionBuilder.addAnnotatedClass(Supplier.class);
+		sessionBuilder.addAnnotatedClass(Cart.class);
 		System.out.println("Session Factory Object Creation");
 		SessionFactory sessionFactory=sessionBuilder.buildSessionFactory();
 		//SessionFactory sessionFactory1=sessionBuilder.buildSessionFactory();
@@ -102,15 +105,21 @@ public class DBConfig
 	}
 	
 	@Autowired
-	@Bean(name="SupplierDAO")
+	@Bean("name=SupplierDAO")
 	public SupplierDAO getSupplierDAO(SessionFactory sessionFactory)
 	{
-		System.out.println("-- SupplierDAO Object Creation--");
+		System.out.println("supplierDAO object creation");
 		return new SupplierDAO(sessionFactory);
 	}
 	
 	
-	
+	@Bean("name=CartDAO")
+	public CartDAO getCartDAO(SessionFactory sessionFactory)
+	{
+		System.out.println("cartDAO object creation");
+		return new CartDAO(sessionFactory);
+	}
+
 	
 	
 	

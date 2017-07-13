@@ -2,7 +2,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<form:form action="InsertProduct" modelAttribute="product" enctype="multipart/form-data">
+
+
+<form:form method="POST" action="InsertProduct" modelAttribute="product" enctype="multipart/form-data">
 <table align="center">
 			<tr>
 				<td colspan="2"><center>Product Details</center></td>
@@ -41,9 +43,9 @@
 				<td><form:textarea path="proddesc" /></td>
 			</tr>
 			<tr>
-			<td>Product Image</td>
-			<td><form:input type="file" path="pimage" /></td>
-	</tr>
+				<td>Product Image</td>
+				<td><form:input type="file" path="pimage" /></td>
+			</tr>
 			
 			<tr>
 			<td colspan="2"><input type="submit" /></td>
@@ -54,17 +56,17 @@
 <!-- Displaying the Product data using Table -->
 <table cellspacing="2" align="center" border="1">
 
-	<tr bgcolor="pink">
+	<tr bgcolor="#ff66ff">
 		<td>Product ID</td>
 		<td>Product Name</td>
 		<td>Price</td>
 		<td>Quantity</td>
 		<td>Category Id</td>
 		<td>Supplier Id</td>
-		<td>Operation</td>
+		<td>Operations</td>
 	</tr>
 	<c:forEach items="${prodlist}" var="product">
-		<tr bgcolor="cyan">
+		<tr bgcolor="#00ff99">
 			<td>${product.prodid}</td>
 			<td>${product.prodname}</td>
 			<td>${product.price}</td>

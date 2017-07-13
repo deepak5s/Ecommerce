@@ -2,44 +2,104 @@ package com.project.Frotend.controller;
 
 import java.util.Collection;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.project.Backend.Indus1.dao.CartDAO;
+import com.project.Backend.Indus1.dao.ProductDAO;
+import com.project.Backend.Indus1.dao.UserDAO;
+import com.project.Backend.Indus1.model.Category;
+import com.project.Backend.Indus1.model.Product;
+import com.project.Backend.Indus1.model.Supplier;
+import com.project.Backend.Indus1.model.UserRegister;
+import com.sun.org.apache.bcel.internal.generic.RETURN;
 
 @Controller
 public class UserController {
+	@Autowired
+	UserDAO userDAO;
+	@Autowired
+	ProductDAO productDAO;
+	@Autowired
+	CartDAO cartDAO;
 	
-	
-	public UserController() {
-		System.out.println("User controller----");
-	}
-
-	@RequestMapping("/login_success")
-	public String loginsuccess(HttpSession session) {
-		System.out.println("loded successfully");
-		String page = "null";
+@RequestMapping("/login_success")
+	public String loginSuccess(HttpSession session, Model m) {
+		
+		String page = null;
 		boolean loggedIn = true;
-
+		// Retrieving the username;
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
-
 		session.setAttribute("username", username);
 		session.setAttribute("loggedIn", loggedIn);
+		
+		// Retrieving the role
+		Collection<GrantedAuthority> authorities = (Collection<GrantedAuthority>) SecurityContextHolder.getContext()
+				.getAuthentication().getAuthorities();
 
-		@SuppressWarnings("unchecked")
-		Collection<GrantedAuthority> authorities = (Collection<GrantedAuthority>) SecurityContextHolder.getContext().getAuthentication().getAuthorities();
-		for (GrantedAuthority role : authorities) {
-			System.out.println("Role:" + role.getAuthority() + "username" + username);
-
-			if (role.getAuthority().equals("USER")) {
-
-				return "AdminHome";
-			} else {
-				return "UserHome";
+		for (GrantedAuthority role : authorities)
+		{
+			System.out.println("Role:" + role.getAuthority() + "UserName:" + username);
+			if (role.getAuthority().equals("ROLE_ADMIN"))
+			{
+				List<Product> prodlist = productDAO.getProductDetails();
+				m.addAttribute("prodlist", prodlist);
+				page = "AdminHome";
+			} 
+			else
+			{
+				@SuppressWarnings("rawtypes")
+				List<Product> prodlist = productDAO.getProductDetails();
+				m.addAttribute("prodlist", prodlist);
+				page = "UserHome";
 			}
+			System.out.println("Login Successfull");
 		}
-		return "page";
+		return page;
+		
 	}
+	
+	
+	
+	
+	
+	
+
+	
+	
+
+	@RequestMapping(value ="/InsertUserRegister",method=RequestMethod.POST)
+	public String insertUserRegister(@ModelAttribute("userRegister") UserRegister userRegister, Model m) {
+		System.out.println("---UserRegister Inserting---");
+		userDAO.insertUpdateUser(userRegister);
+
+		List<UserRegister> userlist=userDAO.getUserDetails();
+		m.addAttribute("userlist", userlist);
+		System.out.println("---UserRegister Inserted--");
+		return "Login";
+	}
+	
+	
+	
+	 @RequestMapping("/perform_logout")
+	    public class SignOutController {
+
+	      @RequestMapping(method=RequestMethod.GET)
+	      public String logout(HttpSession session) {
+	        session.invalidate();
+	        return "Main";
+	      }
+	    }
+	
+
 }
