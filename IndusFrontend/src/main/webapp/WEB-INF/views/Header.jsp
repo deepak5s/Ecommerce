@@ -15,7 +15,7 @@
 </head>
 <body>
 <body
-	background="http://greensportsalliance.org/images/darkGreenSquare.gif">
+	background="C:\Users\Deepak kymar\git\Ecommerce\IndusFrontend\src\main\webapp\resources\images\shop.jpg">
 
 	<div class="header">
 		<div class="container">
@@ -33,7 +33,7 @@
 					<a class="navbar-brand" href="ioo">INDUS</a> <a
 						class="navbar-brand" rel="home" href="ioo" title="Indus"> <img
 						style="max-width: 100px; margin-top: -7px;"
-						src="/resources/images/c.jpg" />
+						src="C:\Users\Deepak kymar\git\Ecommerce\IndusFrontend\src\main\webapp\resources\images\c.jpg" />
 					</a>
 				</div>
 				

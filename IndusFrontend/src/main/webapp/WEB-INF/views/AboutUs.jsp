@@ -7,9 +7,11 @@
 
 <html lang="en">
 <head>
+
 <title>About</title>
 <meta charset="utf-8">
  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@include file="Header.jsp"%>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -64,12 +66,12 @@
 			SO BY THAT WE CAN FULLFILL OUR HUNGER LIKE THAT OUR WEBSITE PROVIDES ALL THE NEEDS OF A HUMAN BY PROVIDEING 
 			CLOTHES,GROCERY,JWELLERY,ELECTRICAL APLLIANCES,ELECTRONIC GADGETS ETC.
 			
-			BY 
-		FOUNDER:DEEPAK KUMAR JHA
-		CEO:AAKASH TYAGI
-		INDUS INC.
-		GHAZIABAD
-		INDIA.
+			<p>BY</p> 
+		<p>FOUNDER:DEEPAK KUMAR JHA</p>
+		<p>CEO:AAKASH TYAGI<p>		
+		<p>INDUS INC.<p>
+		<p>GHAZIABAD</p>
+		<p>INDIA.</p>
 			
 			</p>
 

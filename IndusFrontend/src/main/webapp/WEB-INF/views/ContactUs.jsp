@@ -22,14 +22,14 @@
                       </div>
                       <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
                           <div class="container" style="border-bottom:1px solid black">
-                            <h2>Fantezy</h2>
+                            <h2>INDUS INC.</h2>
                           </div>
                             <hr>
                           <ul class="container details">
-                            <li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>+91 8939634124</p></li>
-                            <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>fantazy@outlook.com</p></li>
-                            <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>Chennai</p></li>
-                            <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span><a href="Header.jsp">www.fantezy.com</p></a>
+                            <li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>+91 8800142629,8744872986</p></li>
+                            <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>feedback@indus.com</p></li>
+                            <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>Ghaziabad</p></li>
+                            <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span><a href="Header.jsp">www.Indus.com</p></a>
                           </ul>
                       </div>
                   </div>

@@ -1,6 +1,8 @@
 package com.project.Frotend.controller;
 
 
+
+
 import java.util.List;
 
 
@@ -36,7 +38,6 @@ public String addToCart(@PathVariable("prodid") int prodid,@RequestParam("quanti
 	cart.setQuantity(quantity);
 	cart.setStatus("N");
 	cart.setUsername(username); 
-	
 	Product product=productDAO.getProduct(prodid);
 	cart.setProdname(product.getProdname());
 	cart.setPrice(product.getPrice());

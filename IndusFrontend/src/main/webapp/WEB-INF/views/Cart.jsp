@@ -20,7 +20,7 @@
 <td><input type="text" value="${cartitem.quantity}" name="quantity" required/> </td>
 
 <td>${cartitem.price*cartitem.quantity}</td>
-<td><img src="<c:url value='/resources/images/${cartitem.prodid }.jpg'/> width="100" height="100">/></td>
+<td><img src="<c:url value='/resources/images/${cartitem.prodid }.jpg'/> width="100" height="100"/></td>
 <td>
 <input type="submit" value="UPDATE" class="btn-success btn-block"/>
 <a href="<c:url value="/deleteCartItem/${cartitem.citemid}"/>" method="get">DELETE</a>
@@ -30,8 +30,8 @@
 
 </c:forEach>
 <tr>
-<td><a href="ProductDesc">ContinueShopping</a></td>
-<td><a href="<c:url value="/CheckOut"/>">CheckOut</a></td>
+<td><a href="displayProducts">ContinueShopping</a></td>
+<td><a href="<c:url value="/checkout"/>">CheckOut</a></td>
 </tr>
 
 

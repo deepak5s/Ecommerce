@@ -13,8 +13,8 @@
 </head>
 <body>
 <%@include file="Header.jsp"%>
-
- 
+<%@include file="carousel.jsp"%>
+<%@include file="carousel1.jsp"%> 
  
  
  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
