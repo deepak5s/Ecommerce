@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-  <title>Login</title>
+  <title>Indus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -13,13 +13,14 @@
 </head>
 <body>
 <%@include file="Header.jsp"%>
-<%@include file="carousel.jsp"%>
-<%@include file="carousel1.jsp"%> 
+
+
+ 
  
  
  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
  
  
- <%@include file="Footer.jsp"%>
+ 
 </body>
 </html>

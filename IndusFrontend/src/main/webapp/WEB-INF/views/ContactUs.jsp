@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<%@include file="Header.jsp" %>
+<%@include file="nav.jsp" %>
 <html lang="en">
 <head>
   <title>ContactUs</title>
@@ -35,7 +35,7 @@
                   </div>
                 </div>
                 
-               <%@include file="Footer.jsp"%>
+               
                
 </body>
 </html>			

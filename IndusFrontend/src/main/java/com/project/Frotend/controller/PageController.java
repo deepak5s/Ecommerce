@@ -41,7 +41,7 @@ public class PageController
 		return "ContactUs";
 	}
 	
-	@RequestMapping("/ioo")
+	@RequestMapping("/Main")
 	public String showindex()
 	{
 		return "Main";

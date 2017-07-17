@@ -12,9 +12,10 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<%@include file="UsersHeader.jsp"%>
+<%@include file="UserHeader.jsp"%>
 
-<div class="row">
+<!--
+<div class="column">
 <div class="col-sm-6 col-md-3">
 <c:forEach items="${prodlist}" var="product"> 
 <a href="ProductDesc/${product.prodid}" class="thumbnail">
@@ -32,5 +33,7 @@
 </div>
 </div>
 
+  -->
+  
 </body>
 </html>

@@ -1,7 +1,7 @@
 <%-- <%@ page language="java" contentType="text/html"%> --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@include file="Header.jsp"%>
+<%@include file="UserHome.jsp"%>
 <form action="OrderComplete" method="post">
 <table cellspacing="3" align="center">
 <tr>
@@ -41,6 +41,6 @@
 <tr><input type="submit" value="Pay"/></tr>tr>
 </table>
 </form>
-<%@include file="Footer.jsp" %>
+
 </body>
 </html>+

@@ -11,7 +11,7 @@
 <title>About</title>
 <meta charset="utf-8">
  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@include file="Header.jsp"%>
+<%@include file="nav.jsp"%>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -81,7 +81,9 @@
 		
 		<!-- /container -->
 		
+		
 </body>
 </html>
 <br><br><br><br><br><br><br><br><br><br>
 <div class="col-md-12">
+

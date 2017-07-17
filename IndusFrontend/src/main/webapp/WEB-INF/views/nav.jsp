@@ -4,7 +4,7 @@
     <head>
     <meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
-	<meta name="author" content="Deepak Kumar"> 
+	<meta name="author" content="sumit kumar"> 
 	<title>Indus WORLD BIGEEST ECPMMERCE PORTAL</title> 
 	<style >
 	
@@ -127,8 +127,8 @@
                 <li class="dropdown">
                  <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-usd" aria-hidden="true"></i>User<span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="logout">Logout</a></li>
-                    
+                    <li><a href="login">Login</a></li>
+                      <li><a href="Register">Register</a></li>
                     
                   </ul>
                 </li>                    
@@ -167,7 +167,7 @@
       <li><a href="displayProducts"><span
 									class="glyphicon glyphicon-list"></span>Products</a></li>
 							
-      
+        
         <li><a href="ContactUs">contact us</a></li>
       </ul>
     
